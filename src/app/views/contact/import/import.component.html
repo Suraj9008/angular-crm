@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="contentbar">
+        <!-- Start row -->
+        <div class="row">
+            <!-- Start col -->
+            <div class="col-md-12 col-lg-12 col-xl-12">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 col-xl-8">
+                                <div class="cart-container">
+                                    <h2> Import Contacts From Social Media</h2>
+                                    <div class="cart-body">
+                                        <div class="row">
+                                            <div class="col-md-12 order-2 order-lg-1 col-lg-5 col-xl-6">
+                                                <div class="order-note">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <div class="custom-control custom-checkbox p-2">
+                                                                <label>Linked In</label>
+                                                                <a href="http://localhost:5000/linkedin/auth/linkedin"
+                                                                    class="btn btn-primary socialbox linkedin">
+                                                                    <div class="social-icon">
+                                                                        <i class="fa fa-linkedin fa-fw"></i>
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <span> <u> Sign in with Linkedin</u></span>
+                                                                    </div>
+                                                                    <div *ngIf="linkedin"
+                                                                        class="spinner-border text-light" role="status">
+                                                                        <span class="sr-only">Loading...</span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox p-2">
+                                                                <label>Outlook</label>
+                                                                <a href="http://localhost:5000/microsoft/auth/windowslive" class="btn btn-primary socialbox microsoft">
+                                                                    <div class="social-icon">
+                                                                        <i class="fa fa-windows fa-fw"></i>
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <u> Sign in with Outlook</u>
+                                                                    </div>
+                                                                    <div *ngIf="outlook"
+                                                                        class="spinner-border text-light" role="status">
+                                                                        <span class="sr-only">Loading...</span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox p-2">
+                                                                <label>Facebook</label>
+                                                                <a href="http://localhost:5000/facebook/auth/facebook" class="btn btn-primary socialbox facebook">
+                                                                    <div class="social-icon">
+                                                                        <i class="fa fa-facebook fa-fw"></i>
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <u>Sign in with Facebook</u>
+                                                                    </div>
+                                                                    <div *ngIf="facebook"
+                                                                        class="spinner-border text-light" role="status">
+                                                                        <span class="sr-only">Loading...</span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox p-2">
+                                                                <label>Salestracker</label>
+                                                                <a href="http://localhost:5000/linkedin/auth/linkedin" 
+                                                                    class="btn btn-success socialbox salestracker">
+                                                                    <div class="social-icon">
+                                                                        <i class="fa fa-line-chart fa-fw"></i>
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <u>Sign in with Salestracker</u>
+                                                                    </div>
+                                                                    <div *ngIf="sale" class="spinner-border text-light"
+                                                                        role="status">
+                                                                        <span class="sr-only">Loading...</span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 order-2 order-lg-2 col-lg-8 col-xl-6 mt-5">
+                                                <div class="order-total table-responsive ">
+                                                    <div class="card-header">
+                                                        <h4>Account Configrations</h4>
+                                                        <p>You can get your API Key in your Account, In Extras tab
+                                                            select API keys or Click <a href="">here</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End col -->
+        </div>
+        <!-- End row -->
+    </div>
+</div>
