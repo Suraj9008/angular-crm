@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { User } from '../_models';
 import { JwtInterceptor } from '../_helpers';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
