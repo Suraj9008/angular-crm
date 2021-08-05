@@ -32,28 +32,28 @@
         </th>
       </thead>
       <tbody>
-        <tr *ngFor="let item of addContact | keyvalue">
+        <tr *ngFor="let item of addContact">
           <td>
-            <input class="form-control" id="key-{{item.value}}" name="key-{{item.value}}" #key type="text"
-              [value]="item.value">
+            <input class="form-control" id="key-{{item}}" name="key-{{item}}" #key type="text"
+              [value]="item">
           </td>
           <td>
             <div class="form-check">
-              <input (change)='toggleDisable($event,item.value)' class="form-check-input" id="check-{{item.value}}"
-                name="check-{{item.value}}" #check type="checkbox" value="" id="flexCheckDefault">
+              <input (change)='toggleDisable($event,item)' class="form-check-input" id="check-{{item}}"
+                name="check-{{item}}" #check type="checkbox" value="" id="flexCheckDefault">
               <label for="">Custom</label>
             </div>
           </td>
           <td>
-            <select [disabled]='disableTextbox' class="form-select" id="select-{{item.value}}"
-              name="select-{{item.value}}" #OptionValue aria-label="Default select example">
+            <select [disabled]='disableTextbox' class="form-select" id="select-{{item}}"
+              name="select-{{item}}" #OptionValue aria-label="Default select example">
               <option selected value="">Open this select menu</option>
               <option *ngFor="let key of JsonData.Sheet1[0] | keyvalue" [value]="key.key">{{key.key}}</option>
             </select>
           </td>
           <td>
             <div class="form-floating">
-              <textarea class="form-control" id="textarea-{{item.value}}" name="textarea-{{item.value}}" #comments
+              <textarea class="form-control" id="textarea-{{item}}" name="textarea-{{item}}" #comments
                 placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
               <label for="floatingTextarea2">Custom Data</label>
             </div>
