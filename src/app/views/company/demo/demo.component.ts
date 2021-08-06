@@ -45,7 +45,7 @@ export class DemoComponent {
   p: number = 0;
   z: number = 0;
   selectedTitle:any
-
+  
   // constructor 
     constructor(private getData: CountryService,
     private CS: ContactService,
@@ -226,8 +226,14 @@ export class DemoComponent {
     }
     
   }
-  
 
+  assignValu(){
+      for (let index = 0; index < this.select.length; index++) {
+        const element = this.select[index];
+        console.log(element);
+      }
+  }
+  
   //show PopUP Box
   public openConfirmationDialog() {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')

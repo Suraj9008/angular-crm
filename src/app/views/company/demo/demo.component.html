@@ -19,7 +19,7 @@
     <table class="table">
       <thead>
         <th>
-          <strong>Contact type field</strong>
+          <strong>Contact Type Field</strong>
         </th>
         <th>
           <strong>Custom</strong>
@@ -45,10 +45,10 @@
             </div>
           </td>
           <td>
-            <select [disabled]='disableTextbox' [(ngModel)]="keyvalue" class="form-select" id="select-{{item}}"
+            <select [disabled]='disableTextbox' class="form-select" id="select-{{item}}" [data-select]="item"
               name="select-{{item}}" #OptionValue aria-label="Default select example">
-              <option *ngIf="item === key.key" selected [value]="null">Open this select menu</option>
-              <option *ngFor="let key of JsonData.Sheet1[0] | keyvalue" [value]="key.key">{{key.key}}</option>
+              <option [value]="null">please select option</option>
+              <option *ngFor="let key of JsonData.Sheet1[0] | keyvalue "[value]="key.key" [class]="item" [selected]="(key.key | lowercase) ==(item | lowercase)? true:false">{{key.key}}</option>
             </select>
           </td>
           <td>
