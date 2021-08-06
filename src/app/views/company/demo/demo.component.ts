@@ -44,7 +44,7 @@ export class DemoComponent {
   noOfcount: number = 0;
   p: number = 0;
   z: number = 0;
-
+  selectedTitle:any
 
   // constructor 
     constructor(private getData: CountryService,
@@ -53,7 +53,7 @@ export class DemoComponent {
     private confirmationDialogService: ConfirmationServiceService) { }
 
   // array of all fields
-  addContact = ['Coantact Type', 'Add Profile', 'Prefix', 'First Name', 'Middle Name', 'Last Name', 'Suffix', 'Preferred Name', 'Gender', 'Date of Birth', 'Email', 'Email Type', 'On Hold', 'Bulk Mailings', 'Select Your Id Type', 'Enter Id No', 'Current Employer', 'Job Title', 'Additional Info', 'Phone', 'Contact Location', 'Instant Messenger', 'IM Location', 'IM Type', 'Social Media Name', 'Username', 'Website', 'Referral Contact', 'Referral ID', 'Testimonials', 'Add Professional Certificates', 'Employee Status', 'Convenient Time for reaching out to you', 'Level Education', 'Favorite Colour', 'Most Preferred Holiday Destination', 'Favorites Brands', 'Favorite leisure time Activities', 'Most Used Apps', 'Favorite Sites', 'Preferred social Media Platform', 'Native Place', 'Languages known', 'Favorite Niche', 'Preferred Shopping Method', 'Shopping websites preferred other than us', 'Religion', 'Food Type preferred', 'Workout Type preferred', 'Blood Group', 'Charities Related to', 'Close to heart social services', 'Most Important Issue', 'Martial Status', 'Marriage Anniversary Date', 'Family Strength', 'Relation', 'Name', 'Age', 'Working or Dependent', 'Phone Number', 'Search Current Address', 'Address Type', 'Primary location for this contact', 'Billing location for this contact', 'Use another contacts address', 'Unit Number', 'Street Number', 'Street Name', 'Street Type', 'Country', 'Select Timezone', 'State', 'City', 'Postal Code', 'Communication Style', 'Salutation Type', 'Privacy', 'Preferred Communication Method', 'Preferred Language', 'Email Format', 'NO BULK EMAILS', 'Tag', 'Group', 'Reference From'];
+  addContact = ['Contact Type', 'Add Profile', 'Prefix', 'First Name', 'Middle Name', 'Last Name', 'Suffix', 'Preferred Name', 'Gender', 'Date of Birth', 'Email', 'Email Type', 'On Hold', 'Bulk Mailings', 'Select Your Id Type', 'Enter Id No', 'Current Employer', 'Job Title', 'Additional Info', 'Phone', 'Contact Location', 'Instant Messenger', 'IM Location', 'IM Type', 'Social Media Name', 'Username', 'Website', 'Referral Contact', 'Referral ID', 'Testimonials', 'Add Professional Certificates', 'Employee Status', 'Convenient Time for reaching out to you', 'Level Education', 'Favorite Colour', 'Most Preferred Holiday Destination', 'Favorites Brands', 'Favorite leisure time Activities', 'Most Used Apps', 'Favorite Sites', 'Preferred social Media Platform', 'Native Place', 'Languages known', 'Favorite Niche', 'Preferred Shopping Method', 'Shopping websites preferred other than us', 'Religion', 'Food Type preferred', 'Workout Type preferred', 'Blood Group', 'Charities Related to', 'Close to heart social services', 'Most Important Issue', 'Martial Status', 'Marriage Anniversary Date', 'Family Strength', 'Relation', 'Name', 'Age', 'Working or Dependent', 'Phone Number', 'Search Current Address', 'Address Type', 'Primary location for this contact', 'Billing location for this contact', 'Use another contacts address', 'Unit Number', 'Street Number', 'Street Name', 'Street Type', 'Country', 'Select Timezone', 'State', 'City', 'Postal Code', 'Communication Style', 'Salutation Type', 'Privacy', 'Preferred Communication Method', 'Preferred Language', 'Email Format', 'NO BULK EMAILS', 'Tag', 'Group', 'Reference From'];
 
   // disable select filed
   toggleDisable(e, val) {
@@ -203,6 +203,8 @@ export class DemoComponent {
     }
 
     if (this.isExcelFile) {
+       
+       this.selectedTitle = this.JsonData.Sheet1[0]
       this.spinnerEnabled = true;
       const reader = new FileReader();
       const file = ev.target.files[0];
@@ -216,14 +218,15 @@ export class DemoComponent {
         }, {});
         this.getData.jsonData.Sheet1 = jsonData.Sheet1;
         this.getData.getJsonData().subscribe(data => this.JsonData.Sheet1 = data)
-        console.log(this.JsonData.Sheet1);
       }
       reader.readAsBinaryString(file);
     }
     else {
       this.inputFile.nativeElement.value = '';
     }
+    
   }
+  
 
   //show PopUP Box
   public openConfirmationDialog() {

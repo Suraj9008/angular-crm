@@ -45,9 +45,9 @@
             </div>
           </td>
           <td>
-            <select [disabled]='disableTextbox' class="form-select" id="select-{{item}}"
+            <select [disabled]='disableTextbox' [(ngModel)]="keyvalue" class="form-select" id="select-{{item}}"
               name="select-{{item}}" #OptionValue aria-label="Default select example">
-              <option selected value="">Open this select menu</option>
+              <option *ngIf="item === key.key" selected [value]="null">Open this select menu</option>
               <option *ngFor="let key of JsonData.Sheet1[0] | keyvalue" [value]="key.key">{{key.key}}</option>
             </select>
           </td>
